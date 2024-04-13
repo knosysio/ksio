@@ -1,7 +1,7 @@
 const { LOCAL_DIR_NAME, resolvePathFromRootRelative, getConfig, ensureDirExists } = require('@knosys/sdk');
 const { DEFAULT_SITE_NAME, DEFAULT_SSG_TYPE, deploySite } = require('@knosys/sdk/src/site');
 const { copyJekyllTheme, serveJekyllSite, generateJekyllSite } = require('@knosys/sdk/src/site/generators/jekyll');
-const { serveHexoSite } = require('@knosys/sdk/src/site/generators/hexo');
+const { serveHexoSite, generateHexoSite } = require('@knosys/sdk/src/site/generators/hexo');
 
 module.exports = {
   execute: (subCmd, site = DEFAULT_SITE_NAME) => {
@@ -18,6 +18,7 @@ module.exports = {
       deployer = generateJekyllSite;
     } else if (generator === 'hexo') {
       server = serveHexoSite;
+      deployer = generateHexoSite;
     }
 
     const srcPath = resolvePathFromRootRelative(source);
