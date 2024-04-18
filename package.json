@@ -1,6 +1,6 @@
 {
   "name": "ksio",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Using KnoSys via CLI",
   "keywords": [
     "knosys",
@@ -28,7 +28,7 @@
     "url": "https://github.com/knosysio/ksio/issues"
   },
   "dependencies": {
-    "@knosys/sdk": "0.0.2"
+    "@knosys/sdk": "0.0.3"
   },
   "scripts": {
     "release": "npm publish"
